@@ -16,3 +16,14 @@ def decode_char(str)
   }
   myobj[str]
 end
+
+def decode_word(str)
+  str.split.map { |item| decode_char(item) }.join
+end
+
+def decode_setence(str)
+  str.split('   ').map { |item| decode_word(item) }.join(' ')
+end
+
+p(decode_setence('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...
+'))
